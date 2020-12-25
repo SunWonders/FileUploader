@@ -1,4 +1,4 @@
-package com.sun.wonders.image.uploader.ImageUploader;
+package com.sun.wonders.image.uploader;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
