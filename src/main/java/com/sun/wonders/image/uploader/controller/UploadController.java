@@ -33,9 +33,6 @@ public class UploadController {
 	@PostMapping("/upload")
 	public ResponseEntity<UploadResponse> upload(@RequestParam("file") MultipartFile file) {
 		uploadService.upload(file);
-		UploadResponse response = new UploadResponse();
-		response.setMessage("Success");
-		response.setStatus(200);
-		return new ResponseEntity<>(response, HttpStatus.ACCEPTED);
+		return new ResponseEntity<>(new UploadResponse(200, "Success"), HttpStatus.ACCEPTED);
 	}
 }

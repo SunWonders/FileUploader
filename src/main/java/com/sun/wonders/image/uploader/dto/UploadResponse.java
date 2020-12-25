@@ -47,5 +47,11 @@ public class UploadResponse {
 	public void setMessage(String message) {
 		this.message = message;
 	}
+
+	public UploadResponse(Integer status, String message) {
+		super();
+		this.status = status;
+		this.message = message;
+	}
 	
 }
