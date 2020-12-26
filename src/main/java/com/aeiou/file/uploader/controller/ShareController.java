@@ -1,4 +1,4 @@
-package com.sun.wonders.image.uploader.controller;
+package com.aeiou.file.uploader.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,4 +1,4 @@
-package com.sun.wonders.image.uploader;
+package com.aeiou.file.uploader;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * The Class ImageUploaderApplication.
  */
 @SpringBootApplication
-public class ImageUploaderApplication {
+public class FileUploaderApplication {
 
 	/**
 	 * The main method.
@@ -16,7 +16,7 @@ public class ImageUploaderApplication {
 	 * @param args the arguments
 	 */
 	public static void main(String[] args) {
-		SpringApplication.run(ImageUploaderApplication.class, args);
+		SpringApplication.run(FileUploaderApplication.class, args);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.sun.wonders.image.uploader.service;
+package com.aeiou.file.uploader.service;
 
 import org.springframework.web.multipart.MultipartFile;
 

@@ -1,4 +1,4 @@
-package com.sun.wonders.image.uploader.dto;
+package com.aeiou.file.uploader.dto;
 
 // TODO: Auto-generated Javadoc
 /**

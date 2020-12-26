@@ -1,10 +1,10 @@
-package com.sun.wonders.image.uploader;
+package com.aeiou.file.uploader;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ImageUploaderApplicationTests {
+class FileUploaderApplicationTests {
 
 	@Test
 	void contextLoads() {

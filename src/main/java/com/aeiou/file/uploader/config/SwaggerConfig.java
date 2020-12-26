@@ -1,5 +1,5 @@
 
-package com.sun.wonders.image.uploader.config;
+package com.aeiou.file.uploader.config;
 
 import static springfox.documentation.builders.PathSelectors.regex;
 
@@ -31,7 +31,7 @@ public class SwaggerConfig {
 	@Bean
 	public Docket contentApi() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("com.sun.wonders.image.uploader")).paths(regex("/v1/.*"))
+				.apis(RequestHandlerSelectors.basePackage("com.aeiou.file.uploader")).paths(regex("/v1/.*"))
 				.build().apiInfo(apiInfo());
 	}
 
@@ -42,7 +42,7 @@ public class SwaggerConfig {
 	 */
 	private ApiInfo apiInfo() {
 		return new ApiInfo("Image Uploader Service", "Image Uploader Service Used for Upload , Read and Share", "1.0", null,
-				new Contact("SunWonders", "http://www.sunwonders.com", null), null, null, Collections.emptyList());
+				new Contact("aeiou", "http://www.aeiou.co.in", null), null, null, Collections.emptyList());
 
 	}
 

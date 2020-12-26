@@ -1,4 +1,4 @@
-package com.sun.wonders.image.uploader.controller;
+package com.aeiou.file.uploader.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.sun.wonders.image.uploader.dto.UploadResponse;
-import com.sun.wonders.image.uploader.service.UploadService;
+import com.aeiou.file.uploader.dto.UploadResponse;
+import com.aeiou.file.uploader.service.UploadService;
 
 // TODO: Auto-generated Javadoc
 /**
