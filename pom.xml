@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sun.wonders.image.uploader</groupId>
-	<artifactId>ImageUploader</artifactId>
+	<artifactId>FileUploader</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ImageUploader</name>
 	<description>Image Uploader</description>
