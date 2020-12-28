@@ -2,22 +2,33 @@ package com.aeiou.file.uploader.dto;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class UploadResponse.
+ * The Class ShortnerResponse.
  */
-public class UploadResponse {
-
+public class ShortnerResponse {
+	
 	/** The status. */
 	private Integer status;
-	
+
 	/** The message. */
 	private String message;
 
+	/** The short url. */
 	private String shortUrl;
-	
+
+	/**
+	 * Gets the short url.
+	 *
+	 * @return the short url
+	 */
 	public String getShortUrl() {
 		return shortUrl;
 	}
 
+	/**
+	 * Sets the short url.
+	 *
+	 * @param shortUrl the new short url
+	 */
 	public void setShortUrl(String shortUrl) {
 		this.shortUrl = shortUrl;
 	}
@@ -58,17 +69,25 @@ public class UploadResponse {
 		this.message = message;
 	}
 
-	public UploadResponse(Integer status, String message) {
-		super();
-		this.status = status;
-		this.message = message;
-	}
-
-	public UploadResponse(Integer status, String message, String shortUrl) {
+	/**
+	 * Instantiates a new shortner response.
+	 *
+	 * @param status the status
+	 * @param message the message
+	 * @param shortUrl the short url
+	 */
+	public ShortnerResponse(Integer status, String message, String shortUrl) {
 		super();
 		this.status = status;
 		this.message = message;
 		this.shortUrl = shortUrl;
 	}
-	
+
+	/**
+	 * Instantiates a new shortner response.
+	 */
+	public ShortnerResponse() {
+		super();
+	}
+
 }

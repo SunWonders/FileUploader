@@ -32,7 +32,7 @@ public class UploadController {
 	 */
 	@PostMapping("/upload")
 	public ResponseEntity<UploadResponse> upload(@RequestParam("file") MultipartFile file) {
-		uploadService.upload(file);
-		return new ResponseEntity<>(new UploadResponse(200, "Success"), HttpStatus.ACCEPTED);
+		String shortUrl=uploadService.upload(file);
+		return new ResponseEntity<>(new UploadResponse(200, "Success",shortUrl), HttpStatus.ACCEPTED);
 	}
 }

@@ -19,11 +19,11 @@ import com.aeiou.file.uploader.service.RetriveService;
 @RestController
 @RequestMapping("/v1/retrive")
 public class RetriveController {
-	
+
 	/** The retrive service. */
 	@Autowired
 	RetriveService retriveService;
-	
+
 	/**
 	 * Serve file.
 	 *
@@ -33,9 +33,18 @@ public class RetriveController {
 	@GetMapping("/getFileByFileName")
 	@ResponseBody
 	public ResponseEntity<Resource> serveFile(@RequestParam String filename) {
-
 		Resource file = retriveService.loadFileAsResource(filename);
-		return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION,
-				"attachment; filename=\"" + file.getFilename() + "\"").body(file);
+		return ResponseEntity.ok()
+				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + file.getFilename() + "\"")
+				.body(file);
+	}
+
+	@GetMapping("/getFile")
+	@ResponseBody
+	public ResponseEntity<Resource> serveFileWithUniqueCode(@RequestParam String filename, @RequestParam String uniqueCode) {
+		Resource file = retriveService.loadFileAsResourceWithUniqueCode(uniqueCode, filename);
+		return ResponseEntity.ok()
+				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + file.getFilename() + "\"")
+				.body(file);
 	}
 }

@@ -31,6 +31,10 @@ public class RetriveServiceImpl implements RetriveService {
 		return Paths.get(filePath).resolve(filename);
 	}
 
+	public Path getFileWithUniqueCode(String uniqueCode, String filename) {
+		return Paths.get(filePath + uniqueCode + "/").resolve(filename);
+	}
+
 	/**
 	 * Load file as resource.
 	 *
@@ -53,4 +57,19 @@ public class RetriveServiceImpl implements RetriveService {
 		}
 	}
 
+	@Override
+	public Resource loadFileAsResourceWithUniqueCode(String uniqueCode, String filename) {
+		try {
+			Path file = getFileWithUniqueCode(uniqueCode, filename);
+			Resource resource = new UrlResource(file.toUri());
+			if (resource.exists() || resource.isReadable()) {
+				return resource;
+			} else {
+				return null;
+
+			}
+		} catch (MalformedURLException e) {
+			return null;
+		}
+	}
 }

@@ -26,4 +26,6 @@ public interface RetriveService {
 	 */
 	Resource loadFileAsResource(String filename);
 
+	Resource loadFileAsResourceWithUniqueCode(String uniqueCode, String filename);
+
 }

@@ -13,5 +13,5 @@ public interface UploadService {
 	 *
 	 * @param file the file
 	 */
-	void upload(MultipartFile file);
+	String upload(MultipartFile file);
 }
