@@ -1,5 +1,7 @@
 package com.aeiou.file.uploader.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,8 +33,20 @@ public class UploadController {
 	 * @return the response entity
 	 */
 	@PostMapping("/upload")
-	public ResponseEntity<UploadResponse> upload(@RequestParam("file") MultipartFile file) {
-		String shortUrl=uploadService.upload(file);
-		return new ResponseEntity<>(new UploadResponse(200, "Success",shortUrl), HttpStatus.ACCEPTED);
+	public ResponseEntity<UploadResponse> upload(@RequestParam("file") MultipartFile file, HttpServletRequest request,
+			@RequestParam(value = "emailId", required = false) String emailId,
+			@RequestParam(value = "countToDownload", required = false) Integer countToDownload) {
+		try {
+
+			String shortUrl = uploadService.upload(file, request, emailId, countToDownload);
+			return new ResponseEntity<>(new UploadResponse(200, "Success", shortUrl), HttpStatus.ACCEPTED);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return new ResponseEntity<>(new UploadResponse(500, "Oops!! We are facing issues,please try again"),
+					HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+
 	}
+
 }

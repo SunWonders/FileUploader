@@ -3,11 +3,16 @@ package com.aeiou.file.uploader.service;
 import java.net.MalformedURLException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
+
+import com.aeiou.file.uploader.entity.UrlShortner;
+import com.aeiou.file.uploader.repo.UrlShortnerRepo;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -19,6 +24,9 @@ public class RetriveServiceImpl implements RetriveService {
 	/** The file path. */
 	@Value("${image.uploader.storage.path}")
 	private String filePath;
+
+	@Autowired
+	private UrlShortnerRepo urlShortnerRepo;
 
 	/**
 	 * Gets the file.
@@ -71,5 +79,11 @@ public class RetriveServiceImpl implements RetriveService {
 		} catch (MalformedURLException e) {
 			return null;
 		}
+	}
+
+	@Override
+	public List<UrlShortner> getAllFilesByEmailId(String emailId) {
+		// TODO Auto-generated method stub
+		return urlShortnerRepo.findByEmailId(emailId);
 	}
 }

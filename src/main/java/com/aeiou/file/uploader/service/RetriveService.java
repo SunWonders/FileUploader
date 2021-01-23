@@ -1,8 +1,11 @@
 package com.aeiou.file.uploader.service;
 
 import java.nio.file.Path;
+import java.util.List;
 
 import org.springframework.core.io.Resource;
+
+import com.aeiou.file.uploader.entity.UrlShortner;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -27,5 +30,8 @@ public interface RetriveService {
 	Resource loadFileAsResource(String filename);
 
 	Resource loadFileAsResourceWithUniqueCode(String uniqueCode, String filename);
+	
+	
+	List<UrlShortner> getAllFilesByEmailId(String emailId);
 
 }
